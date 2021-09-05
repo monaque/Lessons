@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Lessons1.Lesson_4
+namespace Lessons.Lesson_4.HomeWork_4
 {
     class HomeWork4_3
     {
         enum seasons { Winter, Spring, Summer, Autumn }
+
         public static void Main(string[] args)
         {
             static int EnterMonth()
@@ -18,9 +17,9 @@ namespace Lessons1.Lesson_4
                 return a;
             }
 
-            static seasons OfMonth(int monthNumbers)
+            static seasons OfMonth(int monthNumber)
             {
-                switch((monthNumbers % 12) / 3)
+                switch ((monthNumber % 12) / 3)
                 {
                     case 0:
                         return seasons.Winter;
@@ -31,6 +30,7 @@ namespace Lessons1.Lesson_4
                     default: return seasons.Autumn;
                 }
             }
+
             static string Season(seasons s)
             {
                 switch (s)
@@ -47,12 +47,13 @@ namespace Lessons1.Lesson_4
                         return "";
                 }
             }
+
             do
             {
                 int mnth = EnterMonth();
 
                 if (mnth <= 0 || mnth > 12)
-                    Console.WriteLine("Ошибка: введите число от одного до 12");
+                    Console.WriteLine("Ошибка: введите число от 1 до 12");
                 else Console.WriteLine(Season(OfMonth(mnth)));
                 Console.ReadKey();
             }
